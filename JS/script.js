@@ -30,21 +30,7 @@ function renderizaQuizz(quizz) {
 //  Criação de Quizz
 function informacoesBasicas() {
     const input = document.querySelectorAll(".informacoes_basicas input");
-    if (input[0].value.length <= 20 || input[0].value.length >= 65)
-    {
-        alert("O título deve ter no mínimo 20 caracteres e no máximo 65");
-    }
-    else if (input[2].value < 3)
-    {
-        alert("O quizz deve ter pelo menos 3 perguntas");
-    }
-    else if (input[3].value < 2)
-    {
-        alert("O quizz deve ter pelo menos 2 níveis");
-    }
-    else
-    {
-        document.querySelector("informacoes_basicas").classList.add("escondido");
-        document.querySelector("perguntas").classList.remove("escondido");
-    }
+    //alert('test');
+    document.querySelector(".informacoes_basicas").classList.add("escondido");
+    document.querySelector(".perguntas").classList.remove("escondido");
 }

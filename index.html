@@ -21,24 +21,24 @@
     <main>
 
         <div class="criar_quizz">
-            <section class="informacoes_basicas"> <!-- Tela 3.1 - Info básica-->
+            <form class="informacoes_basicas" action="javascript:informacoesBasicas()"> <!-- Tela 3.1 - Info básica-->
                 <h2>Comece pelo começo</h2>
                 <div>
-                    <input type="text" placeholder="Título do seu quizz">
-                    <input type="url" placeholder="URL da imagem do seu quizz" required>
-                    <input type="number" placeholder="Quantidade de perguntas do quizz">
-                    <input type="number" placeholder="Quantidade de níveis do quizz">
+                    <input type="text" placeholder="Título do seu quizz" required minlength="20" maxlength="65">
+                    <input placeholder="URL da imagem do seu quizz" type="url" required>
+                    <input type="number" placeholder="Quantidade de perguntas do quizz" required min="3" max="100">
+                    <input type="number" placeholder="Quantidade de níveis do quizz" required min="2" max="100">
                 </div>
-                <button onclick="informacoesBasicas()">Prosseguir pra criar perguntas</button>
-            </section>
-            <section class="perguntas escondido"> <!-- Tela 3.2 - Perguntas-->
+                <button type="submit">Prosseguir pra criar perguntas</button>
+            </form>
+            <form class="perguntas escondido"> <!-- Tela 3.2 - Perguntas-->
                 <h2>Crie suas perguntas</h2>
                 <div>
                     <h2>Pergunta 1</h2>
                     <input type="text" placeholder="Texto da pergunta">
                     <input type="text" placeholder="Cor de fundo da pergunta">
                 </div>
-            </section>
+            </form>
         </div>
 
         <div class="lista_quizz escondido">

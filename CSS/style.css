@@ -35,7 +35,7 @@ h1{
    line-height: 23px;
 }
 
-/*/tags/*/
+
 h2{
     font-size: 20px;
     font-weight: 700;
@@ -63,6 +63,7 @@ input::placeholder{
     font-style: italic;
 
 }
+/*/tags/*/
 /*/ classes /*/
 
 .lista_quizz img{
@@ -71,7 +72,7 @@ width: 340px;
 border-radius: 5px ;
 }
 
-.criar_quizz section{
+.criar_quizz form{
     width: 100%;
     height: 100%;
     display: flex;
