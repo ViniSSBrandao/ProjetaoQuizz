@@ -24,6 +24,13 @@ background-color: aquamarine;
 margin: 77px auto;
 }
 
+h1{
+   color: white;
+   font-weight: 400;
+   font-size: 19px;
+   line-height: 23px; 
+}
+
 /*/tags/*/
 
 /*/ classes /*/
@@ -34,4 +41,27 @@ width: 340px;
 border-radius: 5px ;
 }
 
+.lista_quizz{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* colocar gradiente*/
+.quizz{
+    height: 181px;
+    width: 340px;
+    
+}
+
+.nome_quizz{
+
+position:relative;
+bottom: 56px;
+right: 0;
+height: 53px;
+align-items: center;
+text-shadow: 1px 0px 2px black;
+padding-left: 17px;
+padding-right: 21px;
+}
 /*/ classes /*/
