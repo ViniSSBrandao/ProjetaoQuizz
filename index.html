@@ -11,29 +11,46 @@
     <title>BuzzQuizz</title>
 </head>
 <body>
-    
+
     <header>
         <div>
         BuzzQuizz
         </div>
     </header>
-    
+
     <main>
 
         <div class="criar_quizz">
-
+            <section class="informacoes_basicas"> <!-- Tela 3.1 - Info básica-->
+                <h2>Comece pelo começo</h2>
+                <div>
+                    <input type="text" placeholder="Título do seu quizz">
+                    <input type="url" placeholder="URL da imagem do seu quizz" required>
+                    <input type="number" placeholder="Quantidade de perguntas do quizz">
+                    <input type="number" placeholder="Quantidade de níveis do quizz">
+                </div>
+                <button onclick="informacoesBasicas()">Prosseguir pra criar perguntas</button>
+            </section>
+            <section class="perguntas escondido"> <!-- Tela 3.2 - Perguntas-->
+                <h2>Crie suas perguntas</h2>
+                <div>
+                    <h2>Pergunta 1</h2>
+                    <input type="text" placeholder="Texto da pergunta">
+                    <input type="text" placeholder="Cor de fundo da pergunta">
+                </div>
+            </section>
         </div>
 
-        <div class="lista_quizz">
-            
+        <div class="lista_quizz escondido">
+
             <img src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/e3f6c36d65ba484f80e778a2c12105be.jpeg" alt="">
-        
+
         </div>
 
     </main>
 
-
-<script src="./JS\script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./JS\script.js"></script>
 </body>
 
 </html>

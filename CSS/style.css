@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /*/tags/*/
+body, *{
+    font-family: 'roboto';
+    box-sizing: border-box;
+}
 
 header{
 width: 100%;
@@ -25,7 +29,33 @@ margin: 77px auto;
 }
 
 /*/tags/*/
+h2{
+    font-size: 20px;
+    font-weight: 700;
+}
 
+button{
+    background-color: #EC362D;
+    border: none;
+    border-radius: 15px;
+    font-size: 21px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+}
+
+input{
+    border: 1px #D1D1D1 solid;
+    border-radius: 5px;
+
+    font-size: 19px;
+    padding: 11px 22px;
+}
+input::placeholder{
+    color: #BABABA;
+    font-style: italic;
+
+}
 /*/ classes /*/
 
 .lista_quizz img{
@@ -34,4 +64,39 @@ width: 340px;
 border-radius: 5px ;
 }
 
+.criar_quizz section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.criar_quizz div{
+    width: 600px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 27px;
+    padding: 18px;
+}
+
+.criar_quizz input{
+    width: 100%;
+    height: 46px;
+
+    margin-bottom: 9px;
+}
+
+.criar_quizz button{
+    width: 370px;
+    height: 54px;
+    margin-top: 80px;
+}
+
+.escondido{
+    display: none !important;
+}
 /*/ classes /*/
