@@ -170,8 +170,9 @@ text-justify: center;
     position: absolute;
     width: 100%;
     /* passar isso para o js */
-    background: url('https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/e3f6c36d65ba484f80e778a2c12105be.jpeg');
-    background-color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(0deg,
+     rgba(0, 0, 0, 0.57),
+     rgba(0, 0, 0, 0.57)), url("https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1-790x444.jpg");
 }
 
 .banner img{
@@ -238,7 +239,62 @@ text-justify: center;
     color: #FF4B4B;
 }
 
+.caixa_resultado{
+    width: 759px;
+    height: 430px;
+    background-color: white;
+    display: flex;
+    padding-top:18px ;
+    padding-left:18px ;
+    padding-right: 14px;
+    flex-direction: column;
+}
 
+.resultado_header{
+    width:727px ;
+    height: 99px;
+    background-color:#EC362D ;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_row{
+    height: 273px;
+    display: flex;
+    flex-direction: row;
+    background-color: chocolate;
+    justify-content:space-between ;
+}
+
+.resultado_img{
+    width: 364px;
+    height: 273px;
+    background-color: beige;
+}
+
+.resultado_img img{
+    width: 364px;
+    height: 273px;
+    background-color: beige;
+}
+
+.resultado_text{
+    width:328px ;
+    height: 250px;
+    background-color: cadetblue;
+}
+
+.resultado_text p{
+    font-weight: 700;
+font-size: 19px;
+line-height: 25px;
+}
 /*/ ESTILOS QUIZ ABERTO  /*/
 
 

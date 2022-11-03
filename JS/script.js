@@ -1,4 +1,5 @@
 let listaQuizz = []; //Lista com todos os quizzes
+let place, erros, acertos;
 
 pegarQuizzes();
 
@@ -11,8 +12,11 @@ renderizarQuizz - mostra no site o quizz a ser renderizado
 clicouQuizz - função executada ao clicar num quizz (abre quizz)
 voltarHome - limpa o html e volta ao inicio
 
+resultado - exibe o resultado do quizz
+informacoesBasicas -  Criação de Quizz
 
 */
+
 function pegarQuizzes() {
     let promisse = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
     promisse.then((response) => {
@@ -38,6 +42,8 @@ function renderizaQuizz(quizz) {
     console.log(quizz);
 }
 
+
+/* Ainda está como um template em html. precisa deixar bonitinho */
 function clicouQuizz(selecionado){
     
 
@@ -78,43 +84,51 @@ function clicouQuizz(selecionado){
     </div>
 </div>
 
-<button onclick="voltarHome()">     VOLTAR       </button>
+
 `;
 
 
     console.log(selecionado);
-
+    resultado(place, acertos, erros);
 }
 
+function resultado(place, acertos, erros){
+    //inserir lógica de resultados
+
+    let percentil = (erros/acertos)*100;
+    
+    place.innerHTML += `
+    <div class="caixa_resultado">
+
+        <div class="resultado_header">
+        <div>joooooooooooj</div>
+        </div>
+        
+        <div class="container_row">
+            <div class="resultado_img">
+            <img src="https://steamuserimages-a.akamaihd.net/ugc/495780761315593167/44E8B4F92DB9DC92646213D847F3B9F61C680C4D/?imw=1024&imh=576&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true">
+            </div>
+
+            <div class="resultado_text">
+            <p>ssssssssssss<p>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="voltarHome()">     Voltar ao menu       </button>
+    `
+
+}
 
 function voltarHome(){
-    clear = document.querySelector('main');
-    bannerRemove = document.querySelector('header');
-    
-    bannerRemove.innerHTML = `
-    <div>
-        BuzzQuizz
-        </div>
-    `;
-
-    clear.innerHTML = `
-    
-    <div class="criar_quizz">
-
-    </div>
-
-    <div class="lista_quizz">
-
-    </div>
-    `;
-    
-    pegarQuizzes();
+    window.location.reload();
 }
 
-//  Criação de Quizz
+
 function informacoesBasicas() {
     const input = document.querySelectorAll(".informacoes_basicas input");
     //alert('test');
     document.querySelector(".informacoes_basicas").classList.add("escondido");
     document.querySelector(".perguntas").classList.remove("escondido");
 }
+
