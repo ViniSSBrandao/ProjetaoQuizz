@@ -21,7 +21,12 @@ main{
 width: 73%;
 background-color: aquamarine;
 
-margin: 77px auto;
+margin-top: 77px;
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+align-items: center;
+display: flex;
 }
 
 h1{
@@ -29,6 +34,12 @@ h1{
    font-weight: 400;
    font-size: 19px;
    line-height: 23px; 
+}
+
+h4{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
 }
 
 /*/tags/*/
@@ -39,19 +50,25 @@ h1{
 height: 181px;
 width: 340px;
 border-radius: 5px ;
+background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgb(255, 255, 255, 0)), url('https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/e3f6c36d65ba484f80e778a2c12105be.jpeg');
 }
 
 .lista_quizz{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    
 }
 
 /* colocar gradiente*/
 .quizz{
     height: 181px;
     width: 340px;
-    
+    margin-bottom: 12px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
+
 
 .nome_quizz{
 
@@ -59,9 +76,56 @@ position:relative;
 bottom: 56px;
 right: 0;
 height: 53px;
-align-items: center;
+
 text-shadow: 1px 0px 2px black;
 padding-left: 17px;
 padding-right: 21px;
+text-justify: center;
+
+}
+
+.pergunta{
+    width: 688px;
+    height: 137px;
+    background-color: antiquewhite;
+    align-items:center;
+    color: white;
+    text-shadow: 1px 0px 2px black;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
+    display: flex;
+    justify-content: center;
+}
+
+.pergunta_texto{
+
+}
+
+.pergunta_caixa{
+    display: flex;
+    width: 759px;
+    height: 676px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: darkgray;
+    
+}
+
+.option{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.option img{
+    width: 330px; 
+    height: 175px;
+}
+
+.option_name{
+    width: 330px;
 }
 /*/ classes /*/
