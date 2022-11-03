@@ -1,6 +1,5 @@
 let listaQuizz = []; //Lista com todos os quizzes
 
-
 pegarQuizzes();
 
 //sumário funçoes//
@@ -110,4 +109,12 @@ function voltarHome(){
     `;
     
     pegarQuizzes();
+}
+
+//  Criação de Quizz
+function informacoesBasicas() {
+    const input = document.querySelectorAll(".informacoes_basicas input");
+    //alert('test');
+    document.querySelector(".informacoes_basicas").classList.add("escondido");
+    document.querySelector(".perguntas").classList.remove("escondido");
 }
