@@ -50,7 +50,7 @@ h4{
 }
 
 
-h2{
+label{
     font-size: 20px;
     font-weight: 700;
 }
@@ -102,7 +102,6 @@ border-radius: 5px ;
     width: 600px;
     background-color: white;
     display: flex;
-    align-items: center;
     flex-direction: column;
 
     margin-top: 27px;
@@ -122,6 +121,11 @@ border-radius: 5px ;
     margin-top: 80px;
 }
 
+.criar_quizz label{
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
 .escondido{
     display: none !important;
 }
@@ -129,7 +133,7 @@ border-radius: 5px ;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+
 }
 
 /* colocar gradiente*/
@@ -176,7 +180,7 @@ text-justify: center;
 }
 
 .banner img{
-   
+
     width: 100%;
 }
 
@@ -218,7 +222,7 @@ text-justify: center;
 }
 
 .option img{
-    width: 330px; 
+    width: 330px;
     height: 175px;
 }
 

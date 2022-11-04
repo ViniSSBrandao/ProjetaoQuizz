@@ -21,43 +21,57 @@
     <main>
 
         <div class="criar_quizz">
-            <form class="informacoes_basicas" action="javascript:informacoesBasicas()"> <!-- Tela 3.1 - Info básica-->
-                <h2>Comece pelo começo</h2>
+            <form class="informacoes_basicas escondido" action="javascript:enviaInformacoesBasicas()"> <!-- Tela 3.1 - Info básica-->
+                <label>Comece pelo começo</label>
                 <div>
-                    <input type="text" placeholder="Título do seu quizz" required minlength="20" maxlength="65">
-                    <input placeholder="URL da imagem do seu quizz" type="url" required>
-                    <input type="number" placeholder="Quantidade de perguntas do quizz" required min="3" max="100">
-                    <input type="number" placeholder="Quantidade de níveis do quizz" required min="2" max="100">
+                    <input class="titulo" type="text" placeholder="Título do seu quizz" required minlength="20" maxlength="65">
+                    <input class="imagem" placeholder="URL da imagem do seu quizz" type="url" required>
+                    <input class="qtd_perguntas" type="number" placeholder="Quantidade de perguntas do quizz" required min="3" max="100">
+                    <input class="qtd_niveis" type="number" placeholder="Quantidade de níveis do quizz" required min="2" max="100">
                 </div>
                 <button type="submit">Prosseguir pra criar perguntas</button>
             </form>
-            <form class="perguntas escondido"> <!-- Tela 3.2 - Perguntas-->
-                <h2>Crie suas perguntas</h2>
-                <div>
-                    <h2>Pergunta 1</h2>
-                    <input type="text" placeholder="Texto da pergunta">
-                    <input type="text" placeholder="Cor de fundo da pergunta">
+            <form class="perguntas escondido" action="javascript:enviaPerguntas()"> <!-- Tela 3.2 - Perguntas-->
+                <label>Crie suas perguntas</label>
+                <!--        Template para perguntas
+                    <div>
+                    <label>Pergunta 1</label>
+                    <input type="text" placeholder="Texto da pergunta" required minlength="20" maxlength="50">
+                    <label>Cor de fundo da pergunta: <span>#000000</span></label> <input type="color" oninput="mudaCor(this)">
+
+                    <label>Resposta correta</label>
+                    <input type="text" placeholder="Resposta correta">
+                    <input type="url" placeholder="URL da imagem">
+
+                    <label>Respostas incorretas</label>
+                    <input type="text" placeholder="Resposta incorreta 1">
+                    <input type="url" placeholder="URL da imagem 1"><br/>
+                    <input type="text" placeholder="Resposta incorreta 2">
+                    <input type="url" placeholder="URL da imagem 2"><br/>
+                    <input type="text" placeholder="Resposta incorreta 3">
+                    <input type="url" placeholder="URL da imagem 3"><br/>
                 </div>
+                -->
             </form>
         </div>
 
         <div class="lista_quizz">
 
-            <!--  template para quizz 
-            
+            <!--  template para quizz
+
 
             <div class="quizz" id="">
                 <div>
             <div><img src="https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/e3f6c36d65ba484f80e778a2c12105be.jpeg" alt=""></div>
             <div class="nome_quizz"><h1>DESCUBRA SUA WAIFU!</h1></div>
                 </div>
-            
+
             -->
 
-           
-            
+
+
         </div>
-        
+
 
         <!-- template de quizz aberto
 
@@ -71,29 +85,30 @@
                 <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
                 <div class="option_name"><h4>questão</h4></div>
             </div>
-            
+
             <div class="option" id="">
                 <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
                 <div class="option_name"><h4>questão</h4></div>
             </div>
-            
+
             <div class="option selected" id="">
                 <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
                 <div class="option_name"><h4>questão</h4></div>
             </div>
-            
+
             <div class="option" id="">
                 <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
                 <div class="option_name"><h4>questão</h4></div>
             </div>
         </div>
-        
+
     -->
 
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./JS\script.js"></script>
+    <script src="./JS\criarQuizz.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 let listaQuizz = []; //Lista com todos os quizzes
 let place, erros, acertos;
 
+
 pegarQuizzes();
 
 //sumário funçoes//
@@ -31,7 +32,7 @@ function pegarQuizzes() {
 
 function renderizaQuizz(quizz) {
     place = document.querySelector('.lista_quizz');
-    console.log(place);
+    //console.log(place);
     place.innerHTML += `
         <div class="quizz" id="" onclick='clicouQuizz(this)'>
         <div><img src="https://c.wallhere.com/photos/f0/b5/mai_sakurajima_Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_o_Minai_anime-1791357.jpg!d" alt=""></div>
@@ -39,26 +40,26 @@ function renderizaQuizz(quizz) {
         </div>
     `;
 
-    console.log(quizz);
+    //console.log(quizz);
 }
 
 
 /* Ainda está como um template em html. precisa deixar bonitinho */
 function clicouQuizz(selecionado){
-    
+
 
     place = document.querySelector('main');
     bannerPlace = document.querySelector('header');
-    
+
     bannerPlace.innerHTML += `
     <div class="banner">
-    
+
     </div>
     `;
 
     place.innerHTML = `
     <div class="pergunta_caixa" id="">
-    
+
     <div class="pergunta" id="">
         <div class="pergunta_texto"><p>AQUI VAI A pergunta</p></div>
     </div>
@@ -67,17 +68,17 @@ function clicouQuizz(selecionado){
         <img src="https://static.anime21.blog.br/2021/04/11-4-1200x675-cropped.jpg" alt="">
         <div class="option_name"><h4>questão</h4></div>
     </div>
-    
+
     <div class="option unselected" id="">
         <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
         <div class="option_name"><h4>questão</h4></div>
     </div>
-    
+
     <div class="option unselected" id="">
         <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
         <div class="option_name"><h4>questão</h4></div>
     </div>
-    
+
     <div class="option unselected" id="">
         <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
         <div class="option_name"><h4>questão</h4></div>
@@ -96,14 +97,14 @@ function resultado(place, acertos, erros){
     //inserir lógica de resultados
 
     let percentil = (erros/acertos)*100;
-    
+
     place.innerHTML += `
     <div class="caixa_resultado">
 
         <div class="resultado_header">
         <div>joooooooooooj</div>
         </div>
-        
+
         <div class="container_row">
             <div class="resultado_img">
             <img src="https://steamuserimages-a.akamaihd.net/ugc/495780761315593167/44E8B4F92DB9DC92646213D847F3B9F61C680C4D/?imw=1024&imh=576&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true">
@@ -123,12 +124,3 @@ function resultado(place, acertos, erros){
 function voltarHome(){
     window.location.reload();
 }
-
-
-function informacoesBasicas() {
-    const input = document.querySelectorAll(".informacoes_basicas input");
-    //alert('test');
-    document.querySelector(".informacoes_basicas").classList.add("escondido");
-    document.querySelector(".perguntas").classList.remove("escondido");
-}
-
