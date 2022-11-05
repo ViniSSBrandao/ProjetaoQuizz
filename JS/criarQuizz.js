@@ -4,38 +4,12 @@ let novoQuizz = {
     questions: [],
     levels: []
 };
-let questions;
-let answers;
-let level;
 
-resetarNovoQuizz();
-
-function resetarNovoQuizz() {
-    novoQuizz = {
-        title: "",
-        image: "",
-        questions: [],
-        levels: []
-    };
-    questions = {
-        title: '',
-        color: '',
-        answers: []
-    };
-    answers = {
-        text: '',
-        image: '',
-        isCorrectAnswer: false
-    };
-
-    levels = {
-        title: '',
-        image: '',
-        text: '',
-        minValue: 0
-    };
+function criarNovoQuizz() {
+    document.querySelector(".lista_quizz_usuario").classList.add("escondido");
+    document.querySelector(".lista_quizz").classList.add("escondido");
+    document.querySelector(".criar_quizz").classList.remove("escondido");
 }
-
 
 function enviaInformacoesBasicas() {
     novoQuizz.title = document.querySelector(".informacoes_basicas .titulo").value;
@@ -53,22 +27,37 @@ function enviaInformacoesBasicas() {
                 <label>Cor de fundo da pergunta: <span class="cor">#000000</span></label> <input type="color" oninput="mudaCor(this)">
 
                 <label>Resposta correta</label>
-                <input class="resposta" type="text" placeholder="Resposta correta">
-                <input class="imagem" type="url" placeholder="URL da imagem">
+                <input class="resposta" type="text" placeholder="Resposta correta" required>
+                <input class="imagem" type="url" placeholder="URL da imagem" required>
 
                 <label>Respostas incorretas</label>
-                <input class="resposta" type="text" placeholder="Resposta incorreta 1">
-                <input class="imagem" type="url" placeholder="URL da imagem 1"><br/>
+                <input class="resposta" type="text" placeholder="Resposta incorreta 1" required>
+                <input class="imagem" type="url" placeholder="URL da imagem 1" required><br/>
                 <input class="resposta" type="text" placeholder="Resposta incorreta 2">
                 <input class="imagem" type="url" placeholder="URL da imagem 2"><br/>
                 <input class="resposta" type="text" placeholder="Resposta incorreta 3">
                 <input class="imagem" type="url" placeholder="URL da imagem 3"><br/>
             </div>`;
-        if (i === novoQuizz.questions.length - 1)
-        {
-            perguntasForm.innerHTML += `<button type="submit">Prosseguir pra criar níveis</button>`
-        }
     }
+    perguntasForm.innerHTML += `<button type="submit">Prosseguir pra criar níveis</button>`;
+
+    const niveisForm = document.querySelector("form.niveis");
+    for (let i = 1; i < novoQuizz.levels.length; i++)
+    {
+        niveisForm.innerHTML += `
+            <div>
+                <label>Nível ${i + 1}</label>
+                <input class="titulo" type="text" placeholder="Título do nível" required minlength="10">
+                <input class="porcentagem_acerto" type="number" placeholder="% de acerto mínima" required min="0" max="100">
+                <input class="imagem" type="url" placeholder="URL da imagem do nível" required>
+                <textarea class="descricao" type="text" placeholder="Descrição do nível" required minlength="30"></textarea>
+            </div>`;
+    }
+    niveisForm.innerHTML += `<button type="submit">Finalizar Quizz</button>`;
+
+    const sucessoQuizz = document.querySelector(".sucesso_quizz");
+    sucessoQuizz.querySelector(".imagem").style.backgroundImage = `linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0), rgba(0,0,0,.5), rgba(0,0,0,.8)), url('${novoQuizz.image}')`;
+    sucessoQuizz.querySelector(".titulo").innerHTML = novoQuizz.title;
 
     document.querySelector(".informacoes_basicas").classList.add("escondido");
     document.querySelector(".perguntas").classList.remove("escondido");
@@ -97,6 +86,27 @@ function enviaPerguntas() {
         }
         novoQuizz.questions[i] = pergunta;
     }
+
+    document.querySelector(".perguntas").classList.add("escondido");
+    document.querySelector(".niveis").classList.remove("escondido");
+}
+
+function enviaNiveis() {
+    let nivelElementos = document.querySelectorAll(".niveis div")
+
+    for (let i = 0; i < novoQuizz.levels.length; i++)
+    {
+        const nivel = {
+            title: nivelElementos[i].querySelector(".titulo").value,
+            image: nivelElementos[i].querySelector(".imagem").value,
+            text: nivelElementos[i].querySelector(".descricao").value,
+            minValue: nivelElementos[i].querySelector(".porcentagem_acerto").value
+        };
+        novoQuizz.levels[i] = nivel;
+    }
+
+    document.querySelector(".niveis").classList.add("escondido");
+    document.querySelector(".sucesso_quizz").classList.remove("escondido");
 }
 
 function mudaCor(element) {
