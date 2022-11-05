@@ -64,25 +64,27 @@ function clicouQuizz(selecionado){
         <div class="pergunta_texto"><p>AQUI VAI A pergunta</p></div>
     </div>
 
-    <div class="option selected" id="">
-        <img src="https://static.anime21.blog.br/2021/04/11-4-1200x675-cropped.jpg" alt="">
-        <div class="option_name"><h4>questão</h4></div>
-    </div>
+    <div class="option_box">
+        <div class="option selected" id="">
+            <img src="https://static.anime21.blog.br/2021/04/11-4-1200x675-cropped.jpg" alt="">
+            <div class="option_name"><h4>questão</h4></div>
+        </div>
 
-    <div class="option unselected" id="">
-        <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
-        <div class="option_name"><h4>questão</h4></div>
-    </div>
+        <div class="option unselected" id="">
+            <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
+            <div class="option_name"><h4>questão</h4></div>
+        </div>
 
-    <div class="option unselected" id="">
-        <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
-        <div class="option_name"><h4>questão</h4></div>
-    </div>
+        <div class="option unselected" id="">
+            <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
+            <div class="option_name"><h4>questão</h4></div>
+        </div>
 
-    <div class="option unselected" id="">
-        <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
-        <div class="option_name"><h4>questão</h4></div>
-    </div>
+        <div class="option unselected" id="">
+            <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
+            <div class="option_name"><h4>questão</h4></div>
+        </div>
+    </div>    
 </div>
 
 

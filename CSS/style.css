@@ -8,7 +8,7 @@
 body, *{
     font-family: 'roboto';
     box-sizing: border-box;
-    background-color: #E5E5E5;
+    
 }
 
 header{
@@ -27,8 +27,8 @@ align-items: center;
 
 main{
 width: 73%;
-background-color: #E5E5E5;
-margin-top: 77px;
+
+padding-top: 77px;
 margin-left: auto;
 margin-right: auto;
 justify-content: center;
@@ -79,9 +79,17 @@ input::placeholder, textarea::placeholder{
     font-style: italic;
 
 }
+
+div{
+    background-color: rgba(0, 0, 0, 0);
+}
+
 /*/tags/*/
 /*/ classes /*/
 
+.corpo{
+    background-color: #E5E5E5;
+}
 
 /* ESTILOS DA LISTA DO QUIZZ*/
 .lista_quizz img{
@@ -130,6 +138,12 @@ border-radius: 5px ;
 
 }
 
+.option_box{
+    display: flex;
+    width: 90.5%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .criar_quizz form, .sucesso_quizz{
     width: 100%;
@@ -208,7 +222,7 @@ border-radius: 5px ;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
+    align-items: center;
 }
 
 .lista_quizz p{
@@ -218,6 +232,7 @@ border-radius: 5px ;
 .todos{
     width: 100%;
     margin-bottom: 16px;
+    margin-top: 45px;
 }
 
 /* colocar gradiente*/
@@ -227,6 +242,7 @@ border-radius: 5px ;
     margin-bottom: 12px;
     margin-right: 5px;
     margin-left: 5px;
+    word-wrap: break-word;
 }
 
 
@@ -399,7 +415,10 @@ text-justify: center;
 
     main{
         width: 100%;
-
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
     }
 
     .lista_quizz{
@@ -408,6 +427,9 @@ text-justify: center;
         flex-direction: column;
     }
 
+    .todos{
+        text-align: center;
+    }
     
 
     .pergunta{
@@ -427,8 +449,15 @@ text-justify: center;
         width: 100%;
     }
 
+    .option_box{
+        margin-top: 46px;
+        padding-bottom: 35px;
+    }
+
     .option{
-        width: 45.25%;
+       
+        width: 47.5%;
+        
     }
 
     .option_name{
