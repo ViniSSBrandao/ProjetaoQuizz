@@ -8,6 +8,7 @@
 body, *{
     font-family: 'roboto';
     box-sizing: border-box;
+    background-color: #E5E5E5;
 }
 
 header{
@@ -21,12 +22,12 @@ box-shadow: 0px 1px 10px 0px black;
 justify-content: center;
 display: flex;
 align-items: center;
+
 }
 
 main{
 width: 73%;
-background-color: aquamarine;
-
+background-color: #E5E5E5;
 margin-top: 77px;
 margin-left: auto;
 margin-right: auto;
@@ -63,6 +64,7 @@ button{
     font-weight: 300;
     color: white;
     text-align: center;
+    cursor: pointer;
 }
 
 input{
@@ -136,13 +138,22 @@ border-radius: 5px ;
 
 }
 
+.lista_quizz p{
+    font-weight: 700;
+}
+
+.todos{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
 /* colocar gradiente*/
 .quizz{
     height: 181px;
     width: 340px;
     margin-bottom: 12px;
     margin-right: 5px;
-margin-left: 5px;
+    margin-left: 5px;
 }
 
 
@@ -188,7 +199,7 @@ text-justify: center;
 .pergunta{
     width: 688px;
     height: 137px;
-    background-color: antiquewhite;
+    
     align-items:center;
     color: white;
     text-shadow: 1px 0px 2px black;
@@ -206,7 +217,7 @@ text-justify: center;
     height: 676px;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: darkgray;
+    background-color: white;
 }
 
 .pergunta_caixa:nth-of-type(1){
@@ -257,7 +268,7 @@ text-justify: center;
 .resultado_header{
     width:727px ;
     height: 99px;
-    background-color:#EC362D ;
+    background-color:#EC362D /*entrada do usuário retirar*/ ;
     box-sizing: border-box;
     color: white;
     font-weight: 700;
@@ -272,26 +283,25 @@ text-justify: center;
     height: 273px;
     display: flex;
     flex-direction: row;
-    background-color: chocolate;
     justify-content:space-between ;
 }
 
 .resultado_img{
     width: 364px;
     height: 273px;
-    background-color: beige;
+    
 }
 
 .resultado_img img{
     width: 364px;
     height: 273px;
-    background-color: beige;
+    
 }
 
 .resultado_text{
     width:328px ;
     height: 250px;
-    background-color: cadetblue;
+    
 }
 
 .resultado_text p{
@@ -299,7 +309,94 @@ text-justify: center;
 font-size: 19px;
 line-height: 25px;
 }
+
+.voltar{
+    margin-top: 34px;
+    margin-bottom: 10px;
+}
 /*/ ESTILOS QUIZ ABERTO  /*/
 
 
 /*/ classes /*/
+
+
+/*/ Interface mobile / */
+
+@media (max-width: 1100px){
+
+    main{
+        width: 100%;
+
+    }
+
+    .lista_quizz{
+        margin-left: 15px;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    
+
+    .pergunta{
+        width: 90.5%;
+        background-color: #FF4B4B /* vem da api, retirar*/;
+    }
+
+    .pergunta_caixa{
+        width: 100%;
+        height: auto;
+        align-items: center;
+        margin-bottom: 46px;
+    }
+
+    .option img{
+       height: auto;
+        width: 100%;
+    }
+
+    .option{
+        width: 45.25%;
+    }
+
+    .option_name{
+        width: 100%;
+    }
+
+    .caixa_resultado{
+        width:100%;
+        padding: 0px;
+        align-items: center;
+        height:auto;
+    }
+
+    .resultado_header{
+        width:90.5%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .resultado_img{
+        width: 90.5%;
+        height: auto;
+        margin-bottom: 9px;
+    }
+
+    .resultado_img img{
+        width: 100%;
+        height: auto;
+    }
+
+    .resultado_text{
+        width: 90.5%;
+    }
+
+    .container_row{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+    }
+    
+   
+
+}

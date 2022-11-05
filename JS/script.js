@@ -116,7 +116,7 @@ function resultado(place, acertos, erros){
         </div>
     </div>
 
-    <button onclick="voltarHome()">     Voltar ao menu       </button>
+    <button onclick="voltarHome()" class="voltar">     Voltar ao menu       </button>
     `
 
 }
@@ -124,3 +124,4 @@ function resultado(place, acertos, erros){
 function voltarHome(){
     window.location.reload();
 }
+
