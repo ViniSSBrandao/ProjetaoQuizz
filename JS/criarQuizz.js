@@ -111,12 +111,20 @@ function enviaNiveis() {
     const promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", novoQuizz);
     promisse.then((response) => {
         console.log(response);
+        guardaDados(response.data);
         document.querySelector(".niveis").classList.add("escondido");
         document.querySelector(".sucesso_quizz").classList.remove("escondido");
     });
     promisse.catch((response) => console.log(response));
 
 }
+
+function guardaDados(quizz) {
+    listaQuizzUsuario.push(quizz);
+    const listaSerializada = JSON.stringify(listaQuizzUsuario);
+    localStorage.setItem("listaQuizzUsuario", listaSerializada)
+}
+
 
 function mudaCor(element) {
     const hexadecimal = element.parentElement.querySelector("span");

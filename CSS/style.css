@@ -87,7 +87,7 @@ div{
 /*/ classes /*/
 
 .corpo{
-    background-color: #E5E5E5;
+    background-color: #FAFAFA;
 }
 
 /* ESTILOS DA LISTA DO QUIZZ*/
@@ -99,6 +99,27 @@ border-radius: 5px ;
 
 }
 
+.titulo{
+    width: 100%;
+    height: 35px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+.titulo ion-icon{
+    width: 30px;
+    height: 30px;
+
+    margin-left: 17px;
+
+    color: #EC362D;
+    cursor: pointer;
+}
 
 .nenhum_quizz{
     width: 100%;
@@ -126,12 +147,13 @@ border-radius: 5px ;
 .nenhum_quizz button{
     width: 150px;
     height: 40px;
-    background-color: white;
+    background-color: #FAFAFA;
 
     border: 1px #EC362D dashed;
     border-radius: 50px;
 
     font-size: 21px;
+    font-weight: 400;
     text-align: center;
     color: #EC362D;
 
@@ -216,7 +238,7 @@ border-radius: 5px ;
 .escondido{
     display: none !important;
 }
-.lista_quizz, .lista_quizz_usuario{
+.lista_quizz, .lista_quizz_usuario, .lista{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -242,7 +264,7 @@ border-radius: 5px ;
     margin-right: 5px;
     margin-left: 5px;
 
-
+    cursor: pointer;
 }
 .quizz .imagem{
     height: 181px;
@@ -251,6 +273,7 @@ border-radius: 5px ;
     background-size: cover;
 
 }
+
 
 
 .nome_quizz{
