@@ -8,7 +8,7 @@
 body, *{
     font-family: 'roboto';
     box-sizing: border-box;
-    
+
 }
 
 header{
@@ -22,7 +22,6 @@ box-shadow: 0px 1px 10px 0px black;
 justify-content: center;
 display: flex;
 align-items: center;
-
 }
 
 main{
@@ -242,7 +241,15 @@ border-radius: 5px ;
     margin-bottom: 12px;
     margin-right: 5px;
     margin-left: 5px;
-    word-wrap: break-word;
+
+
+}
+.quizz .imagem{
+    height: 181px;
+    width: 340px;
+    background-position: center;
+    background-size: cover;
+
 }
 
 
@@ -256,8 +263,17 @@ height: 53px;
 text-shadow: 1px 0px 2px black;
 padding-left: 17px;
 padding-right: 21px;
-text-justify: center;
+display: flex;
+align-items: center;
 
+word-wrap: break-word;
+overflow: hidden;
+}
+
+.nome_quizz h1{
+    width: 100%;
+    height: fit-content;
+    max-height: 100%;
 }
 
 /* ESTILOS LISTA DO QUIZZ */
@@ -288,7 +304,7 @@ text-justify: center;
 .pergunta{
     width: 688px;
     height: 137px;
-    
+
     align-items:center;
     color: white;
     text-shadow: 1px 0px 2px black;
@@ -378,19 +394,19 @@ text-justify: center;
 .resultado_img{
     width: 364px;
     height: 273px;
-    
+
 }
 
 .resultado_img img{
     width: 364px;
     height: 273px;
-    
+
 }
 
 .resultado_text{
     width:328px ;
     height: 250px;
-    
+
 }
 
 .resultado_text p{
@@ -430,7 +446,7 @@ text-justify: center;
     .todos{
         text-align: center;
     }
-    
+
 
     .pergunta{
         width: 90.5%;
@@ -455,9 +471,9 @@ text-justify: center;
     }
 
     .option{
-       
+
         width: 47.5%;
-        
+
     }
 
     .option_name{
@@ -498,7 +514,7 @@ text-justify: center;
         align-items: center;
         height: auto;
     }
-    
-   
+
+
 
 }

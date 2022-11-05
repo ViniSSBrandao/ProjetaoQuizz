@@ -73,12 +73,15 @@ function enviaPerguntas() {
             answers: []
         };
 
+        const respostaElementos = perguntaElementos[i].querySelectorAll(".resposta");
+        const imagemElementos = perguntaElementos[i].querySelectorAll(".imagem");
         for (let x = 0; x < 4; x++)
         {
-            if (perguntaElementos[i].querySelector(".resposta").value === '') return;
+            if (respostaElementos[x].value === '' || imagemElementos[x].value === '') continue;
+
             const resposta = {
-                text: perguntaElementos[i].querySelector(".resposta").value,
-                image: perguntaElementos[i].querySelector(".imagem").value,
+                text: respostaElementos[x].value,
+                image: imagemElementos[x].value,
                 isCorrectAnswer: Boolean(x === 0)
             };
 
@@ -105,8 +108,14 @@ function enviaNiveis() {
         novoQuizz.levels[i] = nivel;
     }
 
-    document.querySelector(".niveis").classList.add("escondido");
-    document.querySelector(".sucesso_quizz").classList.remove("escondido");
+    const promisse = axios.post("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes", novoQuizz);
+    promisse.then((response) => {
+        console.log(response);
+        document.querySelector(".niveis").classList.add("escondido");
+        document.querySelector(".sucesso_quizz").classList.remove("escondido");
+    });
+    promisse.catch((response) => console.log(response));
+
 }
 
 function mudaCor(element) {

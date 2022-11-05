@@ -35,8 +35,9 @@ function renderizaQuizz(quizz) {
     //console.log(place);
     place.innerHTML += `
         <div class="quizz" id="" onclick='clicouQuizz(this)'>
-        <div><img src="${quizz.image}" alt=""></div>
-        <div class="nome_quizz"><h1>${quizz.title}</h1></div>
+        <div class="imagem" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0), rgba(0,0,0,.5), rgba(0,0,0,.8)), url('${quizz.image}');"></div>
+        <div class="nome_quizz">
+        <h1>${quizz.title}</h1></div>
         </div>
     `;
 
@@ -84,7 +85,7 @@ function clicouQuizz(selecionado){
             <img src="https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1.jpg" alt="">
             <div class="option_name"><h4>questão</h4></div>
         </div>
-    </div>    
+    </div>
 </div>
 
 
@@ -126,4 +127,3 @@ function resultado(place, acertos, erros){
 function voltarHome(){
     window.location.reload();
 }
-
