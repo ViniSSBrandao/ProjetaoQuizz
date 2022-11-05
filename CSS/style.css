@@ -63,16 +63,17 @@ button{
     font-weight: 300;
     color: white;
     text-align: center;
+    cursor: pointer;
 }
 
-input{
+input, textarea{
     border: 1px #D1D1D1 solid;
     border-radius: 5px;
 
     font-size: 19px;
     padding: 11px 22px;
 }
-input::placeholder{
+input::placeholder, textarea::placeholder{
     color: #BABABA;
     font-style: italic;
 
@@ -90,7 +91,46 @@ border-radius: 5px ;
 
 }
 
-.criar_quizz form{
+
+.nenhum_quizz{
+    width: 100%;
+    height: 180px;
+
+    border: 1px #D4D4D4 dashed;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nenhum_quizz p{
+    width: 250px;
+
+    font-size: 20px;
+    color: #B9B9B9;
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.nenhum_quizz button{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+
+    border: 1px #EC362D dashed;
+    border-radius: 50px;
+
+    font-size: 21px;
+    text-align: center;
+    color: #EC362D;
+
+}
+
+
+.criar_quizz form, .sucesso_quizz{
     width: 100%;
     height: 100%;
     display: flex;
@@ -115,6 +155,14 @@ border-radius: 5px ;
     margin-bottom: 9px;
 }
 
+.criar_quizz textarea{
+    width: 100%;
+    height: 120px;
+
+    resize: none;
+    margin-bottom: 9px;
+}
+
 .criar_quizz button{
     width: 370px;
     height: 54px;
@@ -126,10 +174,36 @@ border-radius: 5px ;
     margin-bottom: 14px;
 }
 
+.sucesso_quizz div{
+    width: 500px;
+    height: 266px;
+    background-size: cover;
+    position: relative;
+
+    background-position: center;
+    border-radius: 5px;
+}
+
+
+.sucesso_quizz h1{
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+
+.sucesso_quizz p{
+    font-size: 21px;
+    color: #818181;
+    text-align: center;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
 .escondido{
     display: none !important;
 }
-.lista_quizz{
+.lista_quizz, .lista_quizz_usuario{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -142,7 +216,7 @@ border-radius: 5px ;
     width: 340px;
     margin-bottom: 12px;
     margin-right: 5px;
-margin-left: 5px;
+    margin-left: 5px;
 }
 
 
@@ -296,8 +370,8 @@ text-justify: center;
 
 .resultado_text p{
     font-weight: 700;
-font-size: 19px;
-line-height: 25px;
+    font-size: 19px;
+    line-height: 25px;
 }
 /*/ ESTILOS QUIZ ABERTO  /*/
 

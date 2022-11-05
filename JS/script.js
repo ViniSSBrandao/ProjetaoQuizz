@@ -35,8 +35,8 @@ function renderizaQuizz(quizz) {
     //console.log(place);
     place.innerHTML += `
         <div class="quizz" id="" onclick='clicouQuizz(this)'>
-        <div><img src="https://c.wallhere.com/photos/f0/b5/mai_sakurajima_Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_o_Minai_anime-1791357.jpg!d" alt=""></div>
-        <div class="nome_quizz"><h1>DESCUBRA SUA WAIFU! Qual a sua cara metade nos animes?</h1></div>
+        <div><img src="${quizz.image}" alt=""></div>
+        <div class="nome_quizz"><h1>${quizz.title}</h1></div>
         </div>
     `;
 

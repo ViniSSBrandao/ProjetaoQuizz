@@ -20,8 +20,8 @@
 
     <main>
 
-        <div class="criar_quizz">
-            <form class="informacoes_basicas escondido" action="javascript:enviaInformacoesBasicas()"> <!-- Tela 3.1 - Info básica-->
+        <div class="criar_quizz escondido">
+            <form class="informacoes_basicas" action="javascript:enviaInformacoesBasicas()"> <!-- Tela 3.1 - Info básica-->
                 <label>Comece pelo começo</label>
                 <div>
                     <input class="titulo" type="text" placeholder="Título do seu quizz" required minlength="20" maxlength="65">
@@ -53,10 +53,37 @@
                 </div>
                 -->
             </form>
+            <form class="niveis escondido" action="javascript:enviaNiveis()">
+                <label>Agora, decida os níveis</label>
+                <div>
+                    <label>Nível 1</label>
+                    <input class="titulo" type="text" placeholder="Título do nível" required minlength="10">
+                    <input class="porcentagem_acerto" type="number" placeholder="% de acerto mínima" value="0" disabled>
+                    <input class="imagem" type="url" placeholder="URL da imagem do nível" required>
+                    <textarea class="descricao" type="text" placeholder="Descrição do nível" required minlength="30"></textarea>
+                </div>
+            </form>
+            <div class="sucesso_quizz escondido">
+                <label>Seu quizz está pronto!</label>
+                <div class="imagem">
+                    <h1 class="titulo">O quão tryhard é você?</h1>
+                </div>
+                <button>Acessar Quizz</button>
+                <p onclick="location.reload()">Voltar pra home</p>
+
+
+            </div>
         </div>
 
-        <div class="lista_quizz">
+        <div class="lista_quizz_usuario">
+            <div class="nenhum_quizz">
+                <p>Você não criou nenhum quizz ainda :(</p>
+                <button onclick="criarNovoQuizz()">Criar Quizz</button>
+            </div>
+        </div>
 
+
+        <div class="lista_quizz">
             <!--  template para quizz
 
 
