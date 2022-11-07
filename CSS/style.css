@@ -372,7 +372,11 @@ p.voltar{
 }
 
 
-#correct h4{
+#correta .selected h4{
+    color: #009C22;
+}
+
+#correta .unselected h4{
     color: #009C22;
 }
 
@@ -380,7 +384,11 @@ p.voltar{
     opacity: 0.3;
 }
 
-.unselected h4{
+#incorreta .selected h4{
+    color: #FF4B4B;
+}
+
+.unselected #incorreta  h4{
     color: #FF4B4B;
 }
 
@@ -420,6 +428,7 @@ p.voltar{
     display: flex;
     flex-direction: row;
     justify-content:space-between ;
+    margin-top: 16px;
 }
 
 .resultado_img{
@@ -478,10 +487,17 @@ p.voltar{
         flex-direction: column;
     }
 
-    .todos{
-        text-align: center;
+    .lista_quizz_usuario{
+        align-items: center;
+        justify-content: center;
     }
 
+    .todos {
+        width: 341px;
+        
+    }
+
+   
 
     .pergunta{
         width: 90.5%;
@@ -553,6 +569,7 @@ p.voltar{
         align-items: center;
         height: auto;
         width: 90.5%;
+        margin-top: 16px;
     }
 
 
