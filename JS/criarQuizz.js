@@ -114,6 +114,7 @@ function enviaNiveis() {
         guardaDados(response.data);
         document.querySelector(".niveis").classList.add("escondido");
         document.querySelector(".sucesso_quizz").classList.remove("escondido");
+        document.querySelector(".sucesso_quizz button").addEventListener("click", () => { exibirQuizz(response.data.id) });
     });
     promisse.catch((response) => console.log(response));
 

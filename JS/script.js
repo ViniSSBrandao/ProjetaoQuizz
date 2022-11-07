@@ -1,6 +1,6 @@
 let listaQuizz = []; //Lista com todos os quizzes
 let listaQuizzUsuario = recuperaDados();
-let place, erros = 0, acertos = 0;
+let place, acertos = 0;
 let contador, clicouAntes = [];
 
 let quizzSelecionado;
@@ -58,7 +58,7 @@ function renderizaQuizz(quizz, elemento) {
 
 
 
-function exibirQuizz(idQuizz){
+function exibirQuizz(idQuizz) {
     quizzSelecionado = listaQuizzUsuario.find((quizz) => { if (quizz.id === idQuizz) return quizz });
 
     if (quizzSelecionado === undefined)
@@ -68,6 +68,7 @@ function exibirQuizz(idQuizz){
 
     place = document.querySelector('main');
     bannerPlace = document.querySelector('header');
+    setTimeout(focaElemento, 2000, bannerPlace);
     bannerPlace.innerHTML += `
     <div class="banner" style="background: linear-gradient(0deg,
         rgba(0, 0, 0, 0.57),
@@ -85,10 +86,7 @@ function exibirQuizz(idQuizz){
 
         <div class="option_box" id="0">
         </div>
-    </div>
-
-
-        `;
+    </div> `;
 
     for(let j=1; j<len; j++){
         place.innerHTML += `
@@ -110,18 +108,20 @@ function exibirQuizz(idQuizz){
             `;
     }
 
-    for(contador = 0; contador<len; contador++){
-        for(let i=0; i < quizzSelecionado.questions[contador].answers.length; i++){
-            opcoesQuizz(quizzSelecionado, i, contador);
+    for (contador = 0; contador < len; contador++)
+    {
+        let respostasAleatorias = quizzSelecionado.questions[contador].answers.sort(comparador);
+        for(let i=0; i < respostasAleatorias.length; i++){
+            opcoesQuizz(respostasAleatorias[i], i, contador);
         }
 
         perguntaNova(contador, place , quizzSelecionado);
     }
 }
 
-function opcoesQuizz(selecionado, i, aux){
+function opcoesQuizz(resposta, i, aux){
     colocaPergunta = document.querySelector(`#pergunta${aux} .option_box`);
-    let certo = selecionado.questions[aux].answers[i].isCorrectAnswer;
+    let certo = resposta.isCorrectAnswer;
     if(certo){
         certo = "correta";
     }
@@ -130,8 +130,8 @@ function opcoesQuizz(selecionado, i, aux){
     }
     colocaPergunta.innerHTML += `
     <div class="option opt${i}" id="${certo}" onclick="optionClick(this, ${aux})">
-        <img src="${selecionado.questions[contador].answers[i].image}" alt="">
-        <div class="option_name"><h4>${selecionado.questions[contador].answers[i].text}</h4>
+        <img src="${resposta.image}" alt="">
+        <div class="option_name"><h4>${resposta.text}</h4>
     </div>`;
 
 }
@@ -173,6 +173,11 @@ function optionClick(clicada, aux){
     if (clicouAntes.length === quizzSelecionado.questions.length)
     {
         resultado();
+        setTimeout(focaElemento, 2000, document.querySelector(".caixa_resultado"));
+    }
+    else
+    {
+        setTimeout(focaElemento, 2000, document.querySelector(`#pergunta${aux + 1}`));
     }
 }
 
@@ -192,9 +197,8 @@ function resultado(){
 
     place.innerHTML += `
     <div class="caixa_resultado">
-
         <div class="resultado_header">
-        <div>${nivelUsuario.title}</div>
+        <div>${parseInt(percentual)}% de acerto: ${nivelUsuario.title}</div>
         </div>
 
         <div class="container_row">
@@ -208,12 +212,22 @@ function resultado(){
         </div>
     </div>
 
-
-    <button onclick="voltarHome()" class="reiniciar_quizz">Reiniciar Quizz</button>
-    <p onclick="voltarHome()" class="voltar">Voltar pra home</p>
-    `
-
+    <button onclick="reiniciarQuizz()" class="reiniciar_quizz">Reiniciar Quizz</button>
+    <p onclick="voltarHome()" class="voltar">Voltar pra home</p>`;
 }
+
+function reiniciarQuizz() {
+    acertos = 0;
+    clicouAntes = [];
+
+    exibirQuizz(quizzSelecionado.id);
+}
+
+
+function focaElemento(elemento) {
+    elemento.scrollIntoView();
+}
+
 
 function voltarHome(){
     window.location.reload();
@@ -225,4 +239,8 @@ function recuperaDados() {
     if (quizzSerializado === null) return [];
 
     return JSON.parse(quizzSerializado);
+}
+
+function comparador() {
+	return Math.random() - 0.5;
 }
