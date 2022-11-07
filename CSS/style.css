@@ -313,9 +313,7 @@ overflow: hidden;
     position: absolute;
     width: 100%;
     /* passar isso para o js */
-    background: linear-gradient(0deg,
-     rgba(0, 0, 0, 0.57),
-     rgba(0, 0, 0, 0.57)), url("https://www.comboinfinito.com.br/principal/wp-content/uploads/2020/07/Re-zero-rem-02-896x504-1-790x444.jpg");
+    
 }
 
 .banner img{
