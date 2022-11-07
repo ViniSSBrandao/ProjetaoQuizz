@@ -334,13 +334,15 @@ p.voltar{
     line-height: 27px;
     display: flex;
     justify-content: center;
+    margin-bottom: 35px;
+    margin-top: 25px;
 }
 
 
 .pergunta_caixa{
     display: flex;
     width: 759px;
-    height: 676px;
+    height: auto;
     flex-wrap: wrap;
     justify-content: center;
     background-color: white;
@@ -366,10 +368,11 @@ p.voltar{
 
 .option_name{
     width: 330px;
+    word-wrap: break-word;
 }
 
 
-.selected h4{
+#correct h4{
     color: #009C22;
 }
 
@@ -500,16 +503,20 @@ p.voltar{
     .option_box{
         margin-top: 46px;
         padding-bottom: 35px;
+        margin-bottom: 35px;
+
     }
 
     .option, .opt0, .opt1, .opt2, .opt3{
-
+        justify-content: flex-start;
         width: 47.5%;
 
     }
 
     .option_name{
         width: 100%;
+        word-wrap: break-word;
+        overflow: none;
     }
 
     .caixa_resultado{
@@ -526,7 +533,7 @@ p.voltar{
     }
 
     .resultado_img{
-        width: 90.5%;
+        width: 100%;
         height: auto;
         margin-bottom: 9px;
     }
@@ -537,7 +544,7 @@ p.voltar{
     }
 
     .resultado_text{
-        width: 90.5%;
+        width: 100%;
     }
 
     .container_row{
@@ -545,6 +552,7 @@ p.voltar{
         justify-content: flex-start;
         align-items: center;
         height: auto;
+        width: 90.5%;
     }
 
 
