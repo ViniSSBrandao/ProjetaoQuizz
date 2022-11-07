@@ -1,6 +1,6 @@
 let listaQuizz = []; //Lista com todos os quizzes
 let place, erros, acertos;
-let contador;
+let contador, clicouAntes = [];
 
 
 pegarQuizzes();
@@ -141,7 +141,7 @@ function opcoesQuizz(selecionado, i, aux){
     }
     console.log(certo);
             colocaPergunta.innerHTML += `
-            <div class="option" id="${certo}, opt${i}" onclick="optionClick(this, ${aux})">
+            <div class="option, opt${i}" id="${certo}" onclick="optionClick(this, ${aux}, ${i})">
                 <img src="${selecionado.data.questions[contador].answers[i].image}" alt="">
                 <div class="option_name"><h4>${selecionado.data.questions[contador].answers[i].text}</h4></div>
             `
@@ -165,12 +165,18 @@ function perguntaNova(contador, place, selecionado){
      `;
 }
 
-function optionClick(clicada, aux){
+function optionClick(clicada, aux, i){
     unselected = document.querySelector(`#pergunta${aux}`)
-    for(let i=0; i<4; i++){
-        
-    }
+    console.log(unselected);
+    unselected.querySelector(".opt0").classList.add("unselected");
+    unselected.querySelector(".opt1").classList.add("unselected");
+    unselected.querySelector(".opt2").classList.add("unselected");
+    unselected.querySelector(".opt3").classList.add("unselected");
+
+    clicada.classList.remove("unselected");
     clicada.classList.add("selected");
+
+
 }
 
 function resultado(place, acertos, erros, src){

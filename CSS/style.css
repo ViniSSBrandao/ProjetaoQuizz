@@ -311,7 +311,7 @@ text-justify: center;
     margin-top: 200px;
 }
 
-.option{
+.option, .opt0, .opt1, .opt2, .opt3{
     width: 50%;
     display: flex;
     align-items: center;
@@ -442,7 +442,7 @@ text-justify: center;
         margin-bottom: 46px;
     }
 
-    .option img{
+    .option img, .opt0 img, .opt1 img, .opt2 img, .opt3 img{
        height: auto;
         width: 100%;
     }
@@ -452,7 +452,7 @@ text-justify: center;
         padding-bottom: 35px;
     }
 
-    .option{
+    .option, .opt0, .opt1, .opt2, .opt3{
        
         width: 47.5%;
         
