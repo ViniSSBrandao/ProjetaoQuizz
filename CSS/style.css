@@ -487,6 +487,7 @@ p.voltar{
     }
 
     .lista_quizz_usuario{
+        width: 340px;
         align-items: center;
         justify-content: center;
     }
@@ -495,8 +496,6 @@ p.voltar{
         width: 341px;
 
     }
-
-
 
     .pergunta{
         width: 90.5%;

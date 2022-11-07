@@ -98,9 +98,6 @@ function exibirQuizz(idQuizz) {
 
             <div class="option_box" id="${j}" >
 
-
-
-
             </div>
         </div>
 
