@@ -71,12 +71,17 @@
                 </div>
                 <button>Acessar Quizz</button>
                 <p onclick="location.reload()">Voltar pra home</p>
-
-
             </div>
         </div>
 
         <div class="lista_quizz_usuario">
+            <div class="lista_usuario escondido">
+                <div class="titulo">
+                    <h2>Seus Quizzes</h2>
+                    <ion-icon name="add-circle" onclick="criarNovoQuizz()"></ion-icon>
+                </div>
+                <div class="lista"></div>
+            </div>
             <div class="nenhum_quizz">
                 <p>Você não criou nenhum quizz ainda :(</p>
                 <button onclick="criarNovoQuizz()">Criar Quizz</button>
@@ -85,7 +90,7 @@
 
 
         <div class="lista_quizz">
-            <div class="todos"><p>TODOS OS QUIZES </p><div>
+            <div class="todos titulo"><h2>Todos os Quizzes</h2><div>
             <!--  template para quizz
 
 
@@ -139,6 +144,8 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./JS\script.js"></script>
     <script src="./JS\criarQuizz.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

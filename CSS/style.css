@@ -8,7 +8,7 @@
 body, *{
     font-family: 'roboto';
     box-sizing: border-box;
-    
+
 }
 
 header{
@@ -22,7 +22,6 @@ box-shadow: 0px 1px 10px 0px black;
 justify-content: center;
 display: flex;
 align-items: center;
-
 }
 
 main{
@@ -88,7 +87,7 @@ div{
 /*/ classes /*/
 
 .corpo{
-    background-color: #E5E5E5;
+    background-color: #FAFAFA;
 }
 
 /* ESTILOS DA LISTA DO QUIZZ*/
@@ -100,6 +99,27 @@ border-radius: 5px ;
 
 }
 
+.titulo{
+    width: 100%;
+    height: 35px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+.titulo ion-icon{
+    width: 30px;
+    height: 30px;
+
+    margin-left: 17px;
+
+    color: #EC362D;
+    cursor: pointer;
+}
 
 .nenhum_quizz{
     width: 100%;
@@ -127,12 +147,13 @@ border-radius: 5px ;
 .nenhum_quizz button{
     width: 150px;
     height: 40px;
-    background-color: white;
+    background-color: #FAFAFA;
 
     border: 1px #EC362D dashed;
     border-radius: 50px;
 
     font-size: 21px;
+    font-weight: 400;
     text-align: center;
     color: #EC362D;
 
@@ -217,7 +238,7 @@ border-radius: 5px ;
 .escondido{
     display: none !important;
 }
-.lista_quizz, .lista_quizz_usuario{
+.lista_quizz, .lista_quizz_usuario, .lista{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -242,8 +263,17 @@ border-radius: 5px ;
     margin-bottom: 12px;
     margin-right: 5px;
     margin-left: 5px;
-    word-wrap: break-word;
+
+    cursor: pointer;
 }
+.quizz .imagem{
+    height: 181px;
+    width: 340px;
+    background-position: center;
+    background-size: cover;
+
+}
+
 
 
 .nome_quizz{
@@ -256,8 +286,17 @@ height: 53px;
 text-shadow: 1px 0px 2px black;
 padding-left: 17px;
 padding-right: 21px;
-text-justify: center;
+display: flex;
+align-items: center;
 
+word-wrap: break-word;
+overflow: hidden;
+}
+
+.nome_quizz h1{
+    width: 100%;
+    height: fit-content;
+    max-height: 100%;
 }
 
 /* ESTILOS LISTA DO QUIZZ */
@@ -286,7 +325,7 @@ text-justify: center;
 .pergunta{
     width: 688px;
     height: 137px;
-    
+
     align-items:center;
     color: white;
     text-shadow: 1px 0px 2px black;
@@ -376,19 +415,19 @@ text-justify: center;
 .resultado_img{
     width: 364px;
     height: 273px;
-    
+
 }
 
 .resultado_img img{
     width: 364px;
     height: 273px;
-    
+
 }
 
 .resultado_text{
     width:328px ;
     height: 250px;
-    
+
 }
 
 .resultado_text p{
@@ -428,7 +467,7 @@ text-justify: center;
     .todos{
         text-align: center;
     }
-    
+
 
     .pergunta{
         width: 90.5%;
@@ -453,9 +492,9 @@ text-justify: center;
     }
 
     .option{
-       
+
         width: 47.5%;
-        
+
     }
 
     .option_name{
@@ -496,7 +535,7 @@ text-justify: center;
         align-items: center;
         height: auto;
     }
-    
-   
+
+
 
 }

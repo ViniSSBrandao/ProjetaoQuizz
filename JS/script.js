@@ -1,4 +1,5 @@
 let listaQuizz = []; //Lista com todos os quizzes
+let listaQuizzUsuario = recuperaDados();
 let place, erros, acertos;
 let contador;
 
@@ -17,6 +18,8 @@ voltarHome - limpa o html e volta ao inicio
 resultado - exibe o resultado do quizz
 informacoesBasicas -  Criação de Quizz
 
+recuperaDados - procura pelo aquivo guardado no computador, se tiver ele converte e retorna a lista, se não, retorna um array vazio
+
 */
 
 function pegarQuizzes() {
@@ -25,14 +28,24 @@ function pegarQuizzes() {
         listaQuizz = response.data;
         for (let i = 0; i < listaQuizz.length; i++)
         {
-            renderizaQuizz(listaQuizz[i]);
+            renderizaQuizz(listaQuizz[i], document.querySelector('.lista_quizz'));
         }
+
+        if (listaQuizzUsuario.length > 0)
+        {
+            for (let i = 0; i < listaQuizzUsuario.length; i++)
+            {
+                renderizaQuizz(listaQuizzUsuario[i], document.querySelector(".lista_quizz_usuario .lista"));
+            }
+            document.querySelector(".lista_usuario").classList.remove("escondido");
+            document.querySelector(".nenhum_quizz").classList.add("escondido");
+        }
+
      });
     promisse.catch((response) => { console.log(response) });
 }
 
-function renderizaQuizz(quizz) {
-    place = document.querySelector('.lista_quizz');
+function renderizaQuizz(quizz, elemento) {
     //console.log(place);
     place.innerHTML += `
         <div class="quizz" id="${quizz.id}" onclick='clicouQuizz(${quizz.id})'>
@@ -194,3 +207,10 @@ function voltarHome(){
     window.location.reload();
 }
 
+function recuperaDados() {
+    const quizzSerializado = localStorage.getItem("listaQuizzUsuario");
+
+    if (quizzSerializado === null) return [];
+
+    return JSON.parse(quizzSerializado);
+}
