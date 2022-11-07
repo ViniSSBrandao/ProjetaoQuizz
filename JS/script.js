@@ -122,23 +122,26 @@ function exibirQuizz(selecionado){
                 opcoesQuizz(selecionado, i, contador);
          }
          perguntaNova(contador, place , selecionado);
+         
         }
 
-        resultado(place, acertos, erros);
+        resultado(place, acertos, erros, selecionado.data.levels);
+        
     }
     
 function opcoesQuizz(selecionado, i, aux){
     console.log(aux + aux)
     colocaPergunta = document.querySelector(`#pergunta${aux}`);
-    /*certo = selecionado.data.questions[contador].answers[i].isCorrectAnswer;
+    certo = selecionado.data.questions[aux].answers[i].isCorrectAnswer;
     if(certo==true){
         certo="correta";
     }
     else{
         certo="incorreta";
-    }*/
+    }
+    console.log(certo);
             colocaPergunta.innerHTML += `
-            <div class="option selected" id="${1}">
+            <div class="option" id="${certo}, opt${i}" onclick="optionClick(this, ${aux})">
                 <img src="${selecionado.data.questions[contador].answers[i].image}" alt="">
                 <div class="option_name"><h4>${selecionado.data.questions[contador].answers[i].text}</h4></div>
             `
@@ -162,7 +165,15 @@ function perguntaNova(contador, place, selecionado){
      `;
 }
 
-function resultado(place, acertos, erros){
+function optionClick(clicada, aux){
+    unselected = document.querySelector(`#pergunta${aux}`)
+    for(let i=0; i<4; i++){
+        
+    }
+    clicada.classList.add("selected");
+}
+
+function resultado(place, acertos, erros, src){
     //inserir lógica de resultados
 
     let percentil = (erros/acertos)*100;
@@ -176,14 +187,15 @@ function resultado(place, acertos, erros){
 
         <div class="container_row">
             <div class="resultado_img">
-            <img src="https://steamuserimages-a.akamaihd.net/ugc/495780761315593167/44E8B4F92DB9DC92646213D847F3B9F61C680C4D/?imw=1024&imh=576&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true">
+            <img src="${src[0].image}">
             </div>
 
             <div class="resultado_text">
-            <p>ssssssssssss<p>
+            <p>${src[0].text}<p>
             </div>
         </div>
     </div>
+
 
     <button onclick="voltarHome()" class="voltar">     Voltar ao menu       </button>
     `
