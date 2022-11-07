@@ -71,6 +71,7 @@ input, textarea{
     border-radius: 5px;
 
     font-size: 19px;
+    font-weight: 400;
     padding: 11px 22px;
 }
 input::placeholder, textarea::placeholder{
@@ -87,7 +88,7 @@ div{
 /*/ classes /*/
 
 .corpo{
-    background-color: #FAFAFA;
+    background-color: rgb(240, 240, 240);
 }
 
 /* ESTILOS DA LISTA DO QUIZZ*/
@@ -141,6 +142,7 @@ p.voltar{
     color: #818181;
     text-align: center;
 
+    cursor: pointer;
     margin-bottom: 20px;
 }
 
@@ -172,7 +174,8 @@ p.voltar{
 
 .option_box{
     display: flex;
-    width: 90.5%;
+    width: 100%;
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -200,6 +203,7 @@ p.voltar{
     height: 46px;
 
     margin-bottom: 9px;
+    font-weight: 400;
 }
 
 .criar_quizz textarea{
@@ -343,7 +347,7 @@ p.voltar{
 
 
 .pergunta{
-    width: 688px;
+    width: 100%;
     height: 137px;
 
     align-items:center;
@@ -362,6 +366,8 @@ p.voltar{
 .pergunta_caixa{
     display: flex;
     width: 759px;
+    margin-bottom: 40px;
+    padding: 35px 28px;
     height: auto;
     flex-wrap: wrap;
     justify-content: center;
@@ -393,23 +399,16 @@ p.voltar{
 }
 
 
-#correta .selected h4{
+.selected#correta h4, .unselected#correta h4{
     color: #009C22;
 }
 
-#correta .unselected h4{
-    color: #009C22;
-}
 
 .unselected {
     opacity: 0.3;
 }
 
-#incorreta .selected h4{
-    color: #FF4B4B;
-}
-
-.unselected #incorreta  h4{
+.selected#incorreta h4, .unselected#incorreta h4{
     color: #FF4B4B;
 }
 
@@ -422,7 +421,7 @@ p.voltar{
     padding-left:18px ;
     padding-right: 14px;
     flex-direction: column;
- 
+
 }
 
 .reiniciar_quizz{
@@ -515,10 +514,10 @@ p.voltar{
 
     .todos {
         width: 341px;
-        
+
     }
 
-   
+
 
     .pergunta{
         width: 90.5%;
@@ -530,6 +529,7 @@ p.voltar{
         height: auto;
         align-items: center;
         margin-bottom: 46px;
+        background-color: white;
     }
 
     .option img, .opt0 img, .opt1 img, .opt2 img, .opt3 img{
