@@ -352,6 +352,7 @@ overflow: hidden;
 
 .option, .opt0, .opt1, .opt2, .opt3{
     width: 50%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,6 +390,7 @@ overflow: hidden;
     padding-left:18px ;
     padding-right: 14px;
     flex-direction: column;
+ 
 }
 
 .resultado_header{
@@ -427,13 +429,17 @@ overflow: hidden;
 .resultado_text{
     width:328px ;
     height: 250px;
-
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow:none;
 }
 
 .resultado_text p{
     font-weight: 700;
     font-size: 19px;
     line-height: 25px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .voltar{
