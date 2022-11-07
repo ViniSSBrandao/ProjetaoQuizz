@@ -129,6 +129,7 @@ div{
     border: 1px #D4D4D4 dashed;
     border-radius: 5px;
 
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,6 +152,7 @@ p.voltar{
     height: 40px;
     background-color: #FAFAFA;
 
+    margin-top: 20px;
     border: 1px #EC362D dashed;
     border-radius: 50px;
 
@@ -159,6 +161,12 @@ p.voltar{
     text-align: center;
     color: #EC362D;
 
+}
+.nenhum_quizz p{
+    width: 250px;
+    font-size: 20px;
+    color: #B9B9B9;
+    text-align: center;
 }
 
 
@@ -169,7 +177,7 @@ p.voltar{
      rgba(0, 0, 0, 0.5) 64.58%,
       #000000 100%);
     z-index: 2;
-    
+
 }
 
 .option_box{
