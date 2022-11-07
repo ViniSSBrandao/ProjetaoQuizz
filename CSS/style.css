@@ -142,6 +142,7 @@ p.voltar{
     color: #818181;
     text-align: center;
 
+    cursor: pointer;
     margin-bottom: 20px;
 }
 
@@ -337,6 +338,8 @@ p.voltar{
     line-height: 27px;
     display: flex;
     justify-content: center;
+    margin-bottom: 35px;
+    margin-top: 25px;
 }
 
 
@@ -345,6 +348,7 @@ p.voltar{
     width: 759px;
     margin-bottom: 40px;
     padding: 35px 28px;
+    height: auto;
     flex-wrap: wrap;
     justify-content: center;
     background-color: white;
@@ -356,6 +360,7 @@ p.voltar{
 
 .option, .opt0, .opt1, .opt2, .opt3{
     width: 50%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,12 +374,14 @@ p.voltar{
 
 .option_name{
     width: 330px;
+    word-wrap: break-word;
 }
 
 
 .selected#correta h4, .unselected#correta h4{
     color: #009C22;
 }
+
 
 .unselected {
     opacity: 0.3;
@@ -393,6 +400,7 @@ p.voltar{
     padding-left:18px ;
     padding-right: 14px;
     flex-direction: column;
+
 }
 
 .reiniciar_quizz{
@@ -419,6 +427,7 @@ p.voltar{
     display: flex;
     flex-direction: row;
     justify-content:space-between ;
+    margin-top: 16px;
 }
 
 .resultado_img{
@@ -436,13 +445,17 @@ p.voltar{
 .resultado_text{
     width:328px ;
     height: 250px;
-
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow:none;
 }
 
 .resultado_text p{
     font-weight: 700;
     font-size: 19px;
     line-height: 25px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .reiniciar_quizz{
@@ -473,9 +486,16 @@ p.voltar{
         flex-direction: column;
     }
 
-    .todos{
-        text-align: center;
+    .lista_quizz_usuario{
+        align-items: center;
+        justify-content: center;
     }
+
+    .todos {
+        width: 341px;
+
+    }
+
 
 
     .pergunta{
@@ -499,16 +519,20 @@ p.voltar{
     .option_box{
         margin-top: 46px;
         padding-bottom: 35px;
+        margin-bottom: 35px;
+
     }
 
     .option, .opt0, .opt1, .opt2, .opt3{
-
+        justify-content: flex-start;
         width: 47.5%;
 
     }
 
     .option_name{
         width: 100%;
+        word-wrap: break-word;
+        overflow: none;
     }
 
     .caixa_resultado{
@@ -525,7 +549,7 @@ p.voltar{
     }
 
     .resultado_img{
-        width: 90.5%;
+        width: 100%;
         height: auto;
         margin-bottom: 9px;
     }
@@ -536,7 +560,7 @@ p.voltar{
     }
 
     .resultado_text{
-        width: 90.5%;
+        width: 100%;
     }
 
     .container_row{
@@ -544,6 +568,8 @@ p.voltar{
         justify-content: flex-start;
         align-items: center;
         height: auto;
+        width: 90.5%;
+        margin-top: 16px;
     }
 
 
