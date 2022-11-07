@@ -141,7 +141,7 @@ function opcoesQuizz(selecionado, i, aux){
     }
     console.log(certo);
             colocaPergunta.innerHTML += `
-            <div class="option, opt${i}" id="${certo}" onclick="optionClick(this, ${aux}, ${i})">
+            <div class="option, opt${i}" id="${certo}" onclick="optionClick(this, ${aux})">
                 <img src="${selecionado.data.questions[contador].answers[i].image}" alt="">
                 <div class="option_name"><h4>${selecionado.data.questions[contador].answers[i].text}</h4></div>
             `
@@ -165,7 +165,10 @@ function perguntaNova(contador, place, selecionado){
      `;
 }
 
-function optionClick(clicada, aux, i){
+function optionClick(clicada, aux){
+    if(clicouAntes.includes(aux)){
+        return 0;
+    }
     unselected = document.querySelector(`#pergunta${aux}`)
     console.log(unselected);
     unselected.querySelector(".opt0").classList.add("unselected");
@@ -175,7 +178,7 @@ function optionClick(clicada, aux, i){
 
     clicada.classList.remove("unselected");
     clicada.classList.add("selected");
-
+    clicouAntes.push(aux)
 
 }
 
@@ -184,11 +187,12 @@ function resultado(place, acertos, erros, src){
 
     let percentil = (erros/acertos)*100;
 
+
     place.innerHTML += `
     <div class="caixa_resultado">
 
         <div class="resultado_header">
-        <div>joooooooooooj</div>
+        <div>${src[0].title}</div>
         </div>
 
         <div class="container_row">

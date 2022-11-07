@@ -319,7 +319,7 @@ text-justify: center;
     flex-direction: column;
 }
 
-.option img{
+.option img, .opt0 img, .opt1 img, .opt2 img, .opt3 img{
     width: 330px;
     height: 175px;
 }
