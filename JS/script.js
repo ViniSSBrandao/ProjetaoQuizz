@@ -79,9 +79,10 @@ function exibirQuizz(idQuizz) {
     <div class="banner" style="background: linear-gradient(0deg,
         rgba(0, 0, 0, 0.57),
         rgba(0, 0, 0, 0.57)), url(${quizzSelecionado.image});">
-
     </div>
+    <div class="quizz_titulo"><h6>${quizzSelecionado.title}</h6></div>
     `;
+    
     let len = quizzSelecionado.questions.length;
 
     place.innerHTML = `
