@@ -207,6 +207,7 @@ p.voltar{
     width: 370px;
     height: 54px;
     margin-top: 80px;
+    margin-bottom: 60px;
 }
 
 .criar_quizz label{
@@ -571,6 +572,15 @@ p.voltar{
         margin-top: 16px;
     }
 
+    .criar_quizz{
+        width: 100%;
+    }
+    .criar_quizz div{
+        width: 100%;
+    }
+    .criar_quizz button{
+        width: 80%;
+    }
 
 
 }

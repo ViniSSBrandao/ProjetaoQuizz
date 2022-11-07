@@ -26,21 +26,27 @@ recuperaDados - procura pelo aquivo guardado no computador, se tiver ele convert
 function pegarQuizzes() {
     let promisse = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes");
     promisse.then((response) => {
-        listaQuizz = response.data;
-        for (let i = 0; i < listaQuizz.length; i++)
-        {
-            renderizaQuizz(listaQuizz[i], document.querySelector('.lista_quizz'));
-        }
-
+        listaIdUsuario = [];
         if (listaQuizzUsuario.length > 0)
         {
             for (let i = 0; i < listaQuizzUsuario.length; i++)
             {
                 renderizaQuizz(listaQuizzUsuario[i], document.querySelector(".lista_quizz_usuario .lista"));
+                listaIdUsuario.push(listaQuizzUsuario[i].id);
             }
             document.querySelector(".lista_usuario").classList.remove("escondido");
             document.querySelector(".nenhum_quizz").classList.add("escondido");
         }
+
+        listaQuizz = response.data.filter((quizz) => {
+            if (!listaIdUsuario.includes(quizz.id)) return quizz;
+        });
+        for (let i = 0; i < listaQuizz.length; i++)
+        {
+            renderizaQuizz(listaQuizz[i], document.querySelector('.lista_quizz'));
+        }
+
+
 
      });
     promisse.catch((response) => { console.log(response) });
