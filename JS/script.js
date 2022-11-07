@@ -1,8 +1,9 @@
 let listaQuizz = []; //Lista com todos os quizzes
 let listaQuizzUsuario = recuperaDados();
-let place, erros, acertos;
+let place, erros = 0, acertos = 0;
 let contador, clicouAntes = [];
 
+let quizzSelecionado;
 
 pegarQuizzes();
 
@@ -46,7 +47,6 @@ function pegarQuizzes() {
 }
 
 function renderizaQuizz(quizz, elemento) {
-    //console.log(place);
     elemento.innerHTML += `
         <div class="quizz" id="" onclick='exibirQuizz(${quizz.id})'>
         <div class="imagem" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0), rgba(0,0,0,.5), rgba(0,0,0,.8)), url('${quizz.image}');"></div>
@@ -54,21 +54,18 @@ function renderizaQuizz(quizz, elemento) {
         <h1>${quizz.title}</h1></div>
         </div>
     `;
-
-    //console.log(quizz);
 }
 
 
 
 function exibirQuizz(idQuizz){
-    const quizzSelecionado = listaQuizzUsuario.find((quizz) => { if (quizz.id === idQuizz) return quizz });
+    quizzSelecionado = listaQuizzUsuario.find((quizz) => { if (quizz.id === idQuizz) return quizz });
 
-    if (quizzSelecionado === null)
+    if (quizzSelecionado === undefined)
         quizzSelecionado = listaQuizz.find((quizz) => { if (quizz.id === idQuizz) return quizz });
 
 
 
-    console.log(quizzSelecionado);
     place = document.querySelector('main');
     bannerPlace = document.querySelector('header');
     bannerPlace.innerHTML += `
@@ -81,17 +78,12 @@ function exibirQuizz(idQuizz){
     let len = quizzSelecionado.questions.length;
 
     place.innerHTML = `
-    <div class="pergunta_caixa pergunta0" id="pergunta0">
+    <div class="pergunta_caixa" id="pergunta0">
+        <div class="pergunta" id="" style="background-color:${quizzSelecionado.questions[0].color};">
+            <div class="pergunta_texto" ><p>${quizzSelecionado.questions[0].title}</p></div>
+        </div>
 
-            <div class="pergunta" id="" style="background-color:${quizzSelecionado.questions[0].color};">
-                <div class="pergunta_texto" ><p>${quizzSelecionado.questions[0].title}</p></div>
-            </div>
-
-        <div class="option_box" >
-
-
-
-
+        <div class="option_box" id="0">
         </div>
     </div>
 
@@ -106,7 +98,7 @@ function exibirQuizz(idQuizz){
                     <div class="pergunta_texto" ><p>${quizzSelecionado.questions[j].title}</p></div>
                 </div>
 
-            <div class="option_box" id=${j} >
+            <div class="option_box" id="${j}" >
 
 
 
@@ -118,51 +110,39 @@ function exibirQuizz(idQuizz){
             `;
     }
 
-        console.log("len" +len);
-        for(contador = 0; contador<len; contador++){
-            console.log("contador " + contador);
-            for(let i=0; i < quizzSelecionado.questions[contador].answers.length; i++){
-                opcoesQuizz(quizzSelecionado, i, contador);
-         }
-         perguntaNova(contador, place , quizzSelecionado);
-
+    for(contador = 0; contador<len; contador++){
+        for(let i=0; i < quizzSelecionado.questions[contador].answers.length; i++){
+            opcoesQuizz(quizzSelecionado, i, contador);
         }
 
-        resultado(place, acertos, erros, quizzSelecionado.levels);
-
+        perguntaNova(contador, place , quizzSelecionado);
     }
+}
 
 function opcoesQuizz(selecionado, i, aux){
-    console.log(aux + aux)
-    colocaPergunta = document.querySelector(`#pergunta${aux}`);
-    certo = selecionado.questions[aux].answers[i].isCorrectAnswer;
-    if(certo==true){
-        certo="correta";
+    colocaPergunta = document.querySelector(`#pergunta${aux} .option_box`);
+    let certo = selecionado.questions[aux].answers[i].isCorrectAnswer;
+    if(certo){
+        certo = "correta";
     }
     else{
-        certo="incorreta";
+        certo = "incorreta";
     }
-    console.log(certo);
-            colocaPergunta.innerHTML += `
-            <div class="option, opt${i}" id="${certo}" onclick="optionClick(this, ${aux})">
-                <img src="${selecionado.questions[contador].answers[i].image}" alt="">
-                <div class="option_name"><h4>${selecionado.questions[contador].answers[i].text}</h4></div>
-            `
-
-
-    colocaPergunta
+    colocaPergunta.innerHTML += `
+    <div class="option opt${i}" id="${certo}" onclick="optionClick(this, ${aux})">
+        <img src="${selecionado.questions[contador].answers[i].image}" alt="">
+        <div class="option_name"><h4>${selecionado.questions[contador].answers[i].text}</h4>
+    </div>`;
 
 }
 
-function perguntaNova(contador, _place, selecionado){
-    console.log(selecionado)
-    console.log(contador)
+function perguntaNova(contador, _place, selecionado) {
     _place += `
-    <div class="pergunta_caixa" id="">
-        <div class="pergunta" id="" style="background-color:${selecionado.questions[contador].color};">
+    <div class="pergunta_caixa">
+        <div class="pergunta" style="background-color:${selecionado.questions[contador].color};">
             <div class="pergunta_texto" ><p>${selecionado.questions[contador].title}</p></div>
         </div>
-        <div class="option_box" id=${contador} >
+        <div class="option_box" id="${contador}" >
         </div>
     </div>
      `;
@@ -170,47 +150,67 @@ function perguntaNova(contador, _place, selecionado){
 
 function optionClick(clicada, aux){
     if(clicouAntes.includes(aux)){
-        return 0;
+        return;
     }
-    unselected = document.querySelector(`#pergunta${aux}`)
-    console.log(unselected);
-    unselected.querySelector(".opt0").classList.add("unselected");
-    unselected.querySelector(".opt1").classList.add("unselected");
-    unselected.querySelector(".opt2").classList.add("unselected");
-    unselected.querySelector(".opt3").classList.add("unselected");
+    const options = clicada.parentElement.querySelectorAll(`.option`)
 
-    clicada.classList.remove("unselected");
-    clicada.classList.add("selected");
+    for (let i = 0; i < options.length; i++)
+    {
+        if (options[i] === clicada)
+        {
+            options[i].classList.add("selected");
+            if (clicada.id === "correta")
+                acertos++;
+        }
+        else
+        {
+            options[i].classList.add("unselected");
+        }
+    }
+
     clicouAntes.push(aux)
 
+    if (clicouAntes.length === quizzSelecionado.questions.length)
+    {
+        resultado();
+    }
 }
 
-function resultado(place, acertos, erros, src){
+function resultado(){
     //inserir lógica de resultados
 
-    let percentil = (erros/acertos)*100;
+    let percentual = (acertos * 100) / quizzSelecionado.questions.length;
+    console.log(percentual);
+
+    const niveis = quizzSelecionado.levels.filter((level) => { if (level.minValue <= percentual) return level; });
+
+
+    niveis.sort((a, b) => { return a.minValue - b.minValue; });
+    console.log(niveis);
+    let nivelUsuario = niveis[niveis.length - 1];
 
 
     place.innerHTML += `
     <div class="caixa_resultado">
 
         <div class="resultado_header">
-        <div>${src[0].title}</div>
+        <div>${nivelUsuario.title}</div>
         </div>
 
         <div class="container_row">
             <div class="resultado_img">
-            <img src="${src[0].image}">
+            <img src="${nivelUsuario.image}">
             </div>
 
             <div class="resultado_text">
-            <p>${src[0].text}<p>
+            <p>${nivelUsuario.text}<p>
             </div>
         </div>
     </div>
 
 
-    <button onclick="voltarHome()" class="voltar">     Voltar ao menu       </button>
+    <button onclick="voltarHome()" class="reiniciar_quizz">Reiniciar Quizz</button>
+    <p onclick="voltarHome()" class="voltar">Voltar pra home</p>
     `
 
 }

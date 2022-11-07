@@ -134,11 +134,11 @@ div{
     flex-direction: column;
 }
 
-.nenhum_quizz p{
+p.voltar{
     width: 250px;
 
     font-size: 20px;
-    color: #B9B9B9;
+    color: #818181;
     text-align: center;
 
     margin-bottom: 20px;
@@ -278,19 +278,19 @@ div{
 
 .nome_quizz{
 
-position:relative;
-bottom: 56px;
-right: 0;
-height: 53px;
+    position:relative;
+    bottom: 56px;
+    right: 0;
+    height: 53px;
 
-text-shadow: 1px 0px 2px black;
-padding-left: 17px;
-padding-right: 21px;
-display: flex;
-align-items: center;
+    text-shadow: 1px 0px 2px black;
+    padding-left: 17px;
+    padding-right: 21px;
+    display: flex;
+    align-items: center;
 
-word-wrap: break-word;
-overflow: hidden;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .nome_quizz h1{
@@ -313,7 +313,7 @@ overflow: hidden;
     position: absolute;
     width: 100%;
     /* passar isso para o js */
-    
+
 }
 
 .banner img{
@@ -391,6 +391,11 @@ overflow: hidden;
     flex-direction: column;
 }
 
+.reiniciar_quizz{
+    width: 260px;
+    height: 52px;
+}
+
 .resultado_header{
     width:727px ;
     height: 99px;
@@ -436,9 +441,9 @@ overflow: hidden;
     line-height: 25px;
 }
 
-.voltar{
+.reiniciar_quizz{
     margin-top: 34px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 /*/ ESTILOS QUIZ ABERTO  /*/
 
